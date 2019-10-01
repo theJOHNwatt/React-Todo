@@ -81,7 +81,7 @@ class App extends React.Component {
         <TodoList
           data={this.state.data}
           toggleItem={this.toggleItem}
-          clearItems={this.state.clearItems}
+          clearItems={this.clearItems}
           />
       </div>
     )
