@@ -3,10 +3,10 @@ import React from 'react';
 
 class TodoForm extends React.Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            item: ''
+            newItem: ''
         };
     }
 
@@ -16,17 +16,17 @@ class TodoForm extends React.Component {
         });
     };
 
-    submitItem = e => {
+    handlesubmit = e => {
         e.preventDefault();
-        this.props.addItem(this.state.item);
+        this.props.addItem(this.state.newItem);
     };
 
     render() {
         return (
-            <form onSubmit={this.submitItem}>
+            <form onSubmit={this.handlesubmit}>
                 <input
                     type='text'
-                    value={this.item}
+                    value={this.state.newItem}
                     name='item'
                     onChange={this.handleChanges}
                 />
